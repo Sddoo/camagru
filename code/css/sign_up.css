@@ -1,0 +1,62 @@
+@import url("../css/header.css");
+@import url("../css/footer.css");
+
+#message {
+    position: absolute;
+    background-color: #250672;
+    color: white;
+    text-align: center;
+    width: 20%;
+    margin: auto;
+    top: 25%;
+    left: 70%;
+    font-size: 30pt;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#f {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+h1 {
+    margin: 0 0 3% 0;
+}
+
+#form_wrap {
+    width: 20%;
+    height: 20%;
+    margin: auto;
+    margin-top: 15%;
+    text-align: center;
+    background-color: #FFB273;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form > input {
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: auto;
+}
+
+input[type=submit] {
+    background-color: #FF5C00;
+    color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 20%;
+}

@@ -1,0 +1,65 @@
+@import url("../css/header.css");
+@import url("../css/footer.css");
+
+#message {
+    position: absolute;
+    background-color: #250672;
+    color: white;
+    text-align: center;
+    width: 20%;
+    margin: auto;
+    top: 25%;
+    left: 40%;
+    font-size: 30pt;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+body {
+    margin: 0;
+    padding: 0;   
+}
+
+#f {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#forms_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 20%;
+    margin: auto;
+    margin-top: 250px;
+    background-color: #FFB273;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#forms_wrap > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+form > input {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 5px auto;
+}
+
+form > input[type=submit] {
+    width: 50px;
+    background-color: #FF5C00;
+    color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 20%;
+}

@@ -1,0 +1,47 @@
+version: "3.7"
+services:
+  web:
+    build:
+      context: ./dockerfiles/web
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./code:/code
+      - ./conf/default.conf:/etc/nginx/conf.d/default.conf
+      - ./conf/ssl-params.conf:/etc/nginx/snippets/ssl-params.conf
+    links:
+      - php
+    environment:
+      MACHINE_IP: "${DOCKER_HOST}"
+
+  php:
+    build:
+      context: ./dockerfiles/php
+    restart: always
+    volumes:
+      - ./code:/code
+      - ./conf/mail.ini:/usr/local/etc/php/conf.d/mail.ini:ro # not checked yet
+      - ./conf/msmtprc:/etc/msmtprc:ro # not checked yet
+    environment:
+      MYSQL_DATABASE: "camagru"
+      MYSQL_USER: "123"
+      MYSQL_PASSWORD: "123"
+      MACHINE_IP: "${DOCKER_HOST}"
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "vlados"
+      MYSQL_DATABASE: "camagru"
+      MYSQL_USER: "123"
+      MYSQL_PASSWORD: "123"
+    volumes:
+      - ./code:/code
+    links: 
+      - php
+  
